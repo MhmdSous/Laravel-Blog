@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function ( ){
-    return view('admin_master');
-})->name('dashboard');
+// midlleware for auth
+Route::middleware(['auth','role:admin'])->group(function () {
+    // User is authentication and has admin role
+    Route::get('/dashboard', function ( ){
+        return view('admin_master');
+    })->name('dashboard');
+});
+//
+Route::get('/home', function () {
+dd(Auth::user());
+});
+
+
+Route::get('/contact', function () {
+    $contacts = App\Models\Contact::all();
+    return view('contact.index',compact('contacts'));
+});
 //

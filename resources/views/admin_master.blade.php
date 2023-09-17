@@ -4,31 +4,7 @@
 <!--begin::Head-->
 
 
-<head><base href="../../">
-    <meta charset="utf-8" />
-    <title>Empty Page | Keenthemes</title>
-    <meta name="description" content="Page with empty content" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="canonical" href="https://keenthemes.com/metronic" />
-    <!--begin::Fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    <!--end::Fonts-->
-    <!--begin::Page Vendors Styles(used by this page)-->
-    <link href="{{asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <!--end::Page Vendors Styles-->
-    <!--begin::Global Theme Styles(used by all pages)-->
-    <link href="{{asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <!--end::Global Theme Styles-->
-    <!--begin::Layout Themes(used by all pages)-->
-    <link href="{{asset('assets/css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-    <!--end::Layout Themes-->
-    <link rel="shortcut icon" href="{{asset('assets/media/logos/favicon.ico') }}" />
-</head>
+@include('layouts.head')
 
 <!--end::Head-->
 <!--begin::Body-->
@@ -46,7 +22,7 @@
         <!--begin::Toolbar-->
         <div class="d-flex align-items-center">
             <!--begin::Aside Mobile Toggle-->
-            <button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
+            <button class="btn p-0 burger-icon burger-icon-right" id="kt_aside_mobile_toggle">
                 <span></span>
             </button>
             <!--end::Aside Mobile Toggle-->
@@ -94,7 +70,7 @@
                     <!--begin::Toggle-->
                     <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
                         <span class="svg-icon svg-icon svg-icon-xl">
-                            <!--begin::Svg Icon | path:{{asset('assets/media/svg/icons/Navigation/Angle-double-left.svg') }}-->
+                            <!--begin::Svg Icon | path:{{asset('assets/media/svg/icons/Navigation/Angle-double-right.svg') }}-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -278,8 +254,11 @@
                                 <span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
                             </span>
                         </a>
+                        <form action="{{ route('logout') }}" method="POST" >
+                        @csrf
                         <a href="#" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign
                             Out</a>
+                            </form>
                     </div>
                 </div>
             </div>
@@ -590,6 +569,7 @@
         var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
     </script>
   @include('layouts.scripts')
+  @yield('scripts')
 </body>
 <!--end::Body-->
 
