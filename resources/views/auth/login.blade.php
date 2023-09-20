@@ -102,7 +102,7 @@
     </div>
     <!--end::Main-->
 
-@include('layouts.scripts')
+@include('body.scripts')
 </body>
 <!--end::Body-->
 
