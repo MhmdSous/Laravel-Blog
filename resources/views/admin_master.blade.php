@@ -59,14 +59,14 @@
         <!--begin::Page-->
         <div class="d-flex flex-row flex-column-fluid page">
             <!--begin::Aside-->
-@include('body.sidebar')         
+@include('body.sidebar')
    <!--end::Aside-->
             <!--begin::Wrapper-->
             <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
                 <!--begin::Header-->
                @include('body.header')
                 <!--end::Header-->
-                <div dir="rtl"> 
+                <div dir="rtl">
                 <!--begin::Content-->
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
@@ -92,7 +92,7 @@
     </div>
     <!--end::Main-->
     <!-- begin::User Panel-->
-    {{-- <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
+    <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
         <!--begin::Header-->
         <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
             <h3 class="font-weight-bold m-0">User Profile
@@ -141,9 +141,9 @@
                                 <span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
                             </span>
                         </a>
-                        <form action="{{ route('logout') }}" method="POST" >
+                        <form action="" method="POST" >
                         @csrf
-                        <a href="#" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign
+                        <a href="{{ route('logout') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign
                             Out</a>
                             </form>
                     </div>
@@ -425,7 +425,7 @@
             <!--end::Notifications-->
         </div>
         <!--end::Content-->
-    </div> --}}
+    </div>
     <!-- end::User Panel-->
 
     <!--begin::Quick Panel-->

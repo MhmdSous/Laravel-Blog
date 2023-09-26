@@ -10,7 +10,7 @@
     <!--begin::Main-->
     <div class="d-flex flex-column flex-root">
         <!--begin::Login-->
-        <div class="login login-4 login-signin-on d-flex flex-row-fluid" id="kt_login">
+        <div class="login login-3 login-signin-on d-flex flex-row-fluid" id="kt_login">
             <div class="d-flex flex-center flex-row-fluid bgi-size-cover bgi-position-top bgi-no-repeat"
                 style="background-image: url('assets/media/bg/bg-3.jpg');">
                 <div class="login-form text-center p-7 position-relative overflow-hidden">
@@ -90,7 +90,7 @@
                                 <button id="kt_login_forgot_submit"
                                 class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-2">Request</button>
                                 <button id="kt_login_forgot_cancel"
-                                class="btn btn-light-primary font-weight-bold px-9 py-4 my-3 mx-2">Cancel</button>
+                                class="btn btn-dark-primary font-weight-bold px-9 py-4 my-3 mx-2">Cancel</button>
                             </div>
                         </form>
                     </div>

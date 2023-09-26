@@ -12,10 +12,12 @@
                         <p>إضافة مقال جديد</p>
                         <a href="{{ route('blog.create') }}" class="btn btn-primary btn-sm">إضافة مقال</a>
                     </div>
-                </div>                
+                </div>
                 @forelse($posts as $post)
                     <ul>
-                        <li><a href=" {{route('blog.show',$post->id)}}">{{ ucfirst($post->title) }}</a></li>
+                        <li><a href=" {{route('blog.show',$post->id)}}">
+                            {{ app()->isLocale('ar') ? $post->title_ar : $post->title_en }}
+                        </a></li>
                     </ul>
                 @empty
                     <p class="text-warning">لا توجد مقالات متاحة حاليًا</p>

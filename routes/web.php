@@ -41,5 +41,9 @@ Route::get('/blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.
 Route::get('/blog/create/post', [BlogPostController::class, 'create'])->name('blog.create'); //shows create post form
 Route::post('/blog/create/post', [BlogPostController::class, 'store'])->name('blog.store'); //saves the created post to the databse
 Route::get('/blog/{blogPost}/edit', [BlogPostController::class, 'edit'])->name('blog.edit'); //shows edit post form
-Route::put('/blog/{blogPost}/edit', [BlogPostController::class, 'update'])->name('blog.update'); //commits edited post to the database 
+Route::put('/blog/{blogPost}/edit', [BlogPostController::class, 'update'])->name('blog.update'); //commits edited post to the database
 Route::delete('/blog/{blogPost}', [BlogPostController::class, 'destroy'])->name('blog.destroy'); //deletes post from the database
+//
+Route::get('/csrf-token', function () {
+    return response()->json(['csrf_token' => csrf_token()]);
+});

@@ -79,7 +79,6 @@
                             </table>
                         
                         <!--end: Datatable-->
-
                         <!-- JavaScript for Datatable Features -->
                     </div>
                 </div>

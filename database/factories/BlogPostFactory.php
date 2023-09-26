@@ -18,8 +18,11 @@ class BlogPostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence, //Generates a fake sentence
-            'body' => $this->faker->paragraph(30), //generates fake 30 paragraphs
+            'title_ar' => $this->faker->sentence, //Generates a fake sentence
+            'title_en' => $this->faker->sentence, //Generates a fake sentence
+            'body_ar' => $this->faker->paragraph(30), //generates fake 30 paragraphs
+            'body_en' => $this->faker->paragraph(30), //generates fake 30 paragraphs
+            'image' => $this->faker->imageUrl(), //generates fake image url
             'user_id' => User::factory() //Generates a User from factory and extracts id
 
         ];

@@ -1,42 +1,64 @@
 @extends('admin_master')
 @section('content')
-
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 pt-2">
+            <div class="col-md-12">
                 <a href="/blog" class="btn btn-outline-primary btn-sm">الرجوع للخلف</a>
-                <div class="border rounded mt-5 pl-4 pr-4 pt-4 pb-4">
-                    <h1 class="display-4">إضافة مقال جديد</h1>
-                    <p>املأ النموذج وقدمه لإنشاء مقالة جديدة</p>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1 class="card-title display-4">إضافة مقال جديد</h1>
+                        <p class="card-text">املأ النموذج وقدمه لإنشاء مقالة جديدة</p>
 
-                    <hr>
+                        <hr>
 
-                    <form action="{{ route('blog.store') }}" method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="control-group col-12">
-                                <label for="title">عنوان المقالة</label>
-                                <input type="text" id="title" class="form-control" name="title"
-                                       placeholder="أدخل عنوان المقالة" required>
+                        <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="title_ar">عنوان المقالة بالعربي</label>
+                                        <input type="text" id="title_ar" class="form-control" name="title_ar"
+                                            placeholder="أدخل عنوان المقالة بالعربي">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="title_en">عنوان المقالة بالإنجليزية</label>
+                                        <input type="text" id="title_en" class="form-control" name="title_en"
+                                            placeholder="أدخل عنوان المقالة بالإنجليزية">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="body_ar">نص المقالة بالعربي</label>
+                                        <textarea id="body_ar" class="form-control" name="body_ar" placeholder="أدخل نص المقالة بالعربي" rows="4"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="body_en">نص المقالة بالإنجليزية</label>
+                                        <textarea id="body_en" class="form-control" name="body_en" placeholder="أدخل نص المقالة بالإنجليزية" rows="4"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="image">صورة المقالة</label>
+                                        <input type="file" id="image" class="form-control" name="image">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="control-group col-12 mt-2">
-                                <label for="body">نص المقالة</label>
-                                <textarea id="body" class="form-control" name="body" placeholder="ادخل نص المقالة"
-                                          rows="" required></textarea>
+                            <div class="row mt-2">
+                                <div class="col-md-12 text-center">
+                                    <button id="btn-submit" class="btn btn-primary">
+                                        إنشاء المقالة
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="control-group col-12 text-center">
-                                <button id="btn-submit" class="btn btn-primary">
-                                    إنشاء المقالة
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
-
+    
 @endsection

@@ -1,8 +1,7 @@
 <head>
     <base href="../../">
     <meta charset="utf-8" />
-    <title>Empty Page | Keenthemes</title>
-    <meta name="description" content="Page with empty content" />
+    <title>Nano IT Company</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="https://keenthemes.com/metronic" />
 
